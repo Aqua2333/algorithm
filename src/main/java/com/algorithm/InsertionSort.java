@@ -26,9 +26,9 @@ public class InsertionSort {
 
     private static int[] sort(int[] array){
         logger.info("排序开始...");
+        //循环数组，保证右边的比左边的大
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
-
             int j = i - 1;
             while (j >= 0 && array[j] > key) {
                 array[j + 1] = array[j];
