@@ -16,7 +16,7 @@ public class InsertionSort {
 
     public static void main(String[] args) {
 
-        int[] array = {5,2,4,6,1,3};
+        int[] array = {31,41,59,26,41,58};
         int[] sortedArr = sort(array);
         for (int value : sortedArr) {
             System.out.println(value);
@@ -26,11 +26,12 @@ public class InsertionSort {
 
     private static int[] sort(int[] array){
         logger.info("排序开始...");
-        //循环数组，保证右边的比左边的大
+        //循环数组，保证右边的比左边的小
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
             int j = i - 1;
-            while (j >= 0 && array[j] > key) {
+            //当array[i] 大于 array[i - 1]的时候 两者换位置
+            while (j >= 0 && array[j] < key) {
                 array[j + 1] = array[j];
                 j = j - 1;
                 array[j + 1] = key;
