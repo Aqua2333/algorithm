@@ -2,6 +2,10 @@ package com.algorithm;
 
 import org.apache.log4j.Logger;
 
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
+
 /**
  * @author: aqua
  * @create: 2019-09-17 09:06
@@ -16,12 +20,17 @@ public class InsertionSort {
 
     public static void main(String[] args) {
 
-        int[] array = {31,41,59,26,41,58};
-        int[] sortedArr = sort(array);
-        for (int value : sortedArr) {
-            System.out.println(value);
-        }
+        int[] nums = new int[1000000];
 
+        Random random = new Random();
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = random.nextInt(1000000);
+        }
+        Date startDate = new Date();
+        int[] sortedArr = sort(nums);
+        Date endDate = new Date();
+        System.out.println(Arrays.toString(sortedArr));
+        logger.info("耗时:" + (endDate.getTime() - startDate.getTime()));
     }
 
     private static int[] sort(int[] array){
