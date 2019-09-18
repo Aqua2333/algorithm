@@ -2,7 +2,6 @@ package com.algorithm;
 
 import org.apache.log4j.Logger;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
@@ -45,18 +44,16 @@ public class MergeSort {
 
 
     public static void main(String[] args) {
-        int[] nums = new int[1000000];
-
+        int[] nums = new int[100000000];
         Random random = new Random();
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = random.nextInt(1000000);
+            nums[i] = random.nextInt(100000000);
         }
         Date startDate = new Date();
         logger.info("排序开始...");
         int[] newNums = sort(nums, 0, nums.length - 1);
         logger.info("排序完成...");
         Date endDate = new Date();
-        System.out.println(Arrays.toString(newNums));
         logger.info("耗时:" + (endDate.getTime() - startDate.getTime()));
     }
 
